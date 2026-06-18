@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const cards = [
   {
     title: "Agent systems",
@@ -48,13 +50,14 @@ const iconWrap: Record<string, string> = {
 export default function Capabilities() {
   return (
     <section className="mx-auto max-w-page px-6 pb-10 pt-16 sm:px-12 lg:px-20">
-      <span className="font-mono text-[13px] tracking-[0.08em] text-muted">
+      <Reveal as="span" className="block font-mono text-[13px] tracking-[0.08em] text-muted">
         001 — WHAT I BUILD
-      </span>
+      </Reveal>
       <div className="mt-7 grid gap-5 md:grid-cols-3">
-        {cards.map((c) => (
-          <div
+        {cards.map((c, i) => (
+          <Reveal
             key={c.title}
+            delay={i * 70}
             className="flex flex-col gap-[18px] rounded-[16px] border border-line bg-panel p-7"
           >
             <div
@@ -66,7 +69,7 @@ export default function Capabilities() {
               {c.title}
             </h3>
             <p className="text-[15px] leading-[1.6] text-muted">{c.body}</p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

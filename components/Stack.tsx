@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 // AI / agentic capabilities lead the list — they are the differentiators.
 const stack: { label: string; ai?: boolean }[] = [
   { label: "RAG / LLM Infra", ai: true },
@@ -18,13 +20,15 @@ const stack: { label: string; ai?: boolean }[] = [
 export default function Stack() {
   return (
     <section id="stack" className="mx-auto max-w-page px-6 pb-12 pt-8 sm:px-12 lg:px-20">
-      <span className="font-mono text-[13px] tracking-[0.08em] text-muted">
+      <Reveal as="span" className="block font-mono text-[13px] tracking-[0.08em] text-muted">
         STACK
-      </span>
+      </Reveal>
       <div className="mt-5 flex flex-wrap gap-2.5">
-        {stack.map((s) => (
-          <span
+        {stack.map((s, i) => (
+          <Reveal
+            as="span"
             key={s.label}
+            delay={i * 45}
             className={
               s.ai
                 ? "rounded-[8px] border border-pink/30 bg-pink/10 px-4 py-2.5 font-mono text-[14px] text-pink-soft"
@@ -32,7 +36,7 @@ export default function Stack() {
             }
           >
             {s.label}
-          </span>
+          </Reveal>
         ))}
       </div>
     </section>

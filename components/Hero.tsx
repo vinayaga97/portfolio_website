@@ -13,22 +13,31 @@ export default function Hero() {
       />
       <div className="relative mx-auto flex max-w-page flex-col items-center gap-16 px-6 py-16 sm:px-12 lg:flex-row lg:px-20 lg:py-24">
         <div className="flex w-full flex-col gap-8 lg:w-[640px] lg:shrink-0">
-          <span className="self-start rounded-[20px] border border-pink/30 bg-pink/10 px-3.5 py-2 font-mono text-[12px] tracking-[0.06em] text-pink">
+          <span className="hero-in self-start rounded-[20px] border border-pink/30 bg-pink/10 px-3.5 py-2 font-mono text-[12px] tracking-[0.06em] text-pink">
             ENGINEERING LEADER · AI INFRA & DISTRIBUTED SYSTEMS
           </span>
-          <h1 className="flex flex-col text-[56px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[72px] lg:text-[80px]">
+          <h1
+            className="hero-in flex flex-col text-[56px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[72px] lg:text-[80px]"
+            style={{ animationDelay: "80ms" }}
+          >
             <span className="text-snow">Vinay Kumar Agarwal</span>
             <span className="bg-gradient-to-r from-pink to-[#FF9CC2] bg-clip-text text-transparent">
               ships agent systems.
             </span>
           </h1>
-          <p className="max-w-[560px] text-[18px] leading-[1.65] text-muted sm:text-[19px]">
+          <p
+            className="hero-in max-w-[560px] text-[18px] leading-[1.65] text-muted sm:text-[19px]"
+            style={{ animationDelay: "160ms" }}
+          >
             I lead platform engineering for AI and agentic systems at Plotline —
             orchestration, distributed execution, and observability serving 1B+
             requests a day. Previously scaled backend at Inshorts to 10M+ DAU and
             built GenAI platforms at Allen Digital. IIT Kanpur.
           </p>
-          <div className="flex flex-wrap items-center gap-4">
+          <div
+            className="hero-in flex flex-wrap items-center gap-4"
+            style={{ animationDelay: "240ms" }}
+          >
             <a
               href="mailto:vka0797@gmail.com"
               className="rounded-[10px] bg-gradient-to-br from-pink to-pink-mid px-6 py-3.5 text-[15px] font-semibold text-onaccent shadow-[0_8px_30px_rgba(255,61,129,0.35)] transition-transform hover:-translate-y-0.5"
@@ -46,7 +55,10 @@ export default function Hero() {
             </span>
           </div>
         </div>
-        <div className="flex w-full justify-center lg:flex-1">
+        <div
+          className="hero-in flex w-full justify-center lg:flex-1"
+          style={{ animationDelay: "320ms" }}
+        >
           <AgentMesh />
         </div>
       </div>

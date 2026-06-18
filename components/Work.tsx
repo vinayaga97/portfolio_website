@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 type Role = {
   period: string;
   title: string;
@@ -76,7 +78,11 @@ export default function Work() {
 
       <div className="flex flex-col">
         {roles.map((r, i) => (
-          <div key={r.title + r.period} className="flex items-stretch gap-6 sm:gap-12">
+          <Reveal
+            key={r.title + r.period}
+            delay={i * 70}
+            className="flex items-stretch gap-6 sm:gap-12"
+          >
             <Rail current={r.current} first={i === 0} last={i === roles.length - 1} />
             <div className="flex flex-1 flex-col gap-6 py-6 sm:flex-row sm:items-start sm:gap-12">
               <span className="font-mono text-[14px] text-muted sm:w-[120px] sm:shrink-0 sm:pt-1">
@@ -90,7 +96,7 @@ export default function Work() {
               </div>
               <p className="flex-1 text-[15px] leading-[1.6] text-muted">{r.body}</p>
             </div>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
