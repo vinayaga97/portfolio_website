@@ -16,7 +16,7 @@ export default function Footer() {
             EMAIL
           </a>
           <a href="/resume.pdf" target="_blank" rel="noreferrer" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
-            RÉSUMÉ
+            RESUME
           </a>
         </div>
       </div>
