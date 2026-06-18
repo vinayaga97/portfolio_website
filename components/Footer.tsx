@@ -6,13 +6,13 @@ export default function Footer() {
           © {new Date().getFullYear()} VINAY KUMAR AGARWAL
         </span>
         <div className="flex gap-7">
-          <a href="https://github.com/dart-vinay" target="_blank" rel="noreferrer" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
+          <a href="https://github.com/vinayaga97" target="_blank" rel="noreferrer" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
             GITHUB
           </a>
-          <a href="https://www.linkedin.com/in/vinay-kumar-agarwal" target="_blank" rel="noreferrer" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
+          <a href="https://www.linkedin.com/in/vinay-kumar-agarwal/" target="_blank" rel="noreferrer" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
             LINKEDIN
           </a>
-          <a href="mailto:vinay@plotline.so" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
+          <a href="mailto:vka0797@gmail.com" className="font-mono text-[13px] text-muted transition-colors hover:text-snow">
             EMAIL
           </a>
         </div>

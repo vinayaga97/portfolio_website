@@ -30,7 +30,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="mailto:vinay@plotline.so"
+              href="mailto:vka0797@gmail.com"
               className="rounded-[10px] bg-gradient-to-br from-pink to-pink-mid px-6 py-3.5 text-[15px] font-semibold text-ink shadow-[0_8px_30px_rgba(255,61,129,0.35)] transition-transform hover:-translate-y-0.5"
             >
               Get in touch
@@ -42,7 +42,7 @@ export default function Hero() {
               View work
             </a>
             <span className="pl-1 font-mono text-[14px] text-muted">
-              vinay@plotline.so
+              vka0797@gmail.com
             </span>
           </div>
         </div>
