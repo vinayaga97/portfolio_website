@@ -56,8 +56,8 @@ function Rail({ current, first, last }: { current?: boolean; first: boolean; las
       <div
         className={
           current
-            ? "absolute left-1/2 top-9 h-[11px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink shadow-[0_0_0_4px_#0A0B0E,0_0_12px_rgba(255,61,129,0.6)]"
-            : "absolute left-1/2 top-9 h-[9px] w-[9px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-muted2 bg-[#3A4250] shadow-[0_0_0_4px_#0A0B0E]"
+            ? "absolute left-1/2 top-9 h-[11px] w-[11px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-pink shadow-[0_0_0_4px_rgb(var(--c-bg)),0_0_12px_rgba(255,61,129,0.6)]"
+            : "absolute left-1/2 top-9 h-[9px] w-[9px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-muted2 bg-line2 shadow-[0_0_0_4px_rgb(var(--c-bg))]"
         }
       />
     </div>
@@ -86,7 +86,7 @@ export default function Work() {
                 <span className="text-[22px] font-semibold tracking-[-0.01em] text-snow">
                   {r.title}
                 </span>
-                <span className="text-[15px] text-pink-soft">{r.company}</span>
+                <span className="text-[15px] text-pink">{r.company}</span>
               </div>
               <p className="flex-1 text-[15px] leading-[1.6] text-muted">{r.body}</p>
             </div>

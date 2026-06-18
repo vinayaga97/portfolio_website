@@ -18,14 +18,31 @@ export const metadata: Metadata = {
   },
 };
 
+// Applied before paint to avoid a theme flash. Default = dark;
+// honors a saved choice, otherwise follows the OS preference.
+const themeScript = `
+(function(){try{
+  var t=localStorage.getItem('theme');
+  if(t==='light'){document.documentElement.classList.add('light');}
+  else if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.classList.add('light');}
+}catch(e){}})();
+`;
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="font-sans bg-ink text-snow antialiased">{children}</body>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="font-sans bg-ink text-snow antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {children}
+      </body>
     </html>
   );
 }

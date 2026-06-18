@@ -2,15 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme tokens — RGB channels so Tailwind's /alpha modifiers work.
+   Default = dark. `.light` on <html> switches to light. */
+:root {
+  --c-bg: 10 11 14;        /* #0A0B0E */
+  --c-surface: 18 20 25;   /* #121419 */
+  --c-surface-2: 17 21 26; /* #11151A */
+  --c-panel: 19 22 32;     /* #131620 */
+  --c-line: 30 34 43;      /* #1E222B */
+  --c-line-2: 38 44 56;    /* #262C38 */
+  --c-hair: 36 48 66;      /* #243042 */
+  --c-muted: 154 163 178;  /* #9AA3B2 */
+  --c-muted-2: 92 102 114; /* #5C6672 */
+  --c-fg2: 199 205 216;    /* #C7CDD8 */
+  --c-fg: 244 246 250;     /* #F4F6FA */
+  --c-edge: 38 44 56;      /* #262C38 */
+}
+
+.light {
+  --c-bg: 255 255 255;     /* white */
+  --c-surface: 246 247 249;/* #F6F7F9 */
+  --c-surface-2: 240 242 245;/* #F0F2F5 */
+  --c-panel: 248 249 251;  /* #F8F9FB */
+  --c-line: 226 230 236;   /* #E2E6EC */
+  --c-line-2: 208 214 222; /* #D0D6DE */
+  --c-hair: 213 220 229;   /* #D5DCE5 */
+  --c-muted: 90 100 114;   /* #5A6472 */
+  --c-muted-2: 138 147 161;/* #8A93A1 */
+  --c-fg2: 42 51 64;       /* #2A3340 */
+  --c-fg: 20 24 31;        /* #14181F */
+  --c-edge: 205 211 219;   /* #CDD3DB */
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #0a0b0e;
-  color: #f4f6fa;
+  background-color: rgb(var(--c-bg));
+  color: rgb(var(--c-fg));
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection {

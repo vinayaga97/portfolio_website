@@ -8,17 +8,22 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0A0B0E",
-        surface: "#121419",
-        surface2: "#11151A",
-        panel: "#131620",
-        line: "#1E222B",
-        line2: "#262C38",
-        hair: "#243042",
-        muted: "#9AA3B2",
-        muted2: "#5C6672",
-        ink2: "#C7CDD8",
-        snow: "#F4F6FA",
+        // Semantic tokens backed by CSS variables (see app/globals.css).
+        ink: "rgb(var(--c-bg) / <alpha-value>)",
+        surface: "rgb(var(--c-surface) / <alpha-value>)",
+        surface2: "rgb(var(--c-surface-2) / <alpha-value>)",
+        panel: "rgb(var(--c-panel) / <alpha-value>)",
+        line: "rgb(var(--c-line) / <alpha-value>)",
+        line2: "rgb(var(--c-line-2) / <alpha-value>)",
+        hair: "rgb(var(--c-hair) / <alpha-value>)",
+        muted: "rgb(var(--c-muted) / <alpha-value>)",
+        muted2: "rgb(var(--c-muted-2) / <alpha-value>)",
+        ink2: "rgb(var(--c-fg2) / <alpha-value>)",
+        snow: "rgb(var(--c-fg) / <alpha-value>)",
+        edge: "rgb(var(--c-edge) / <alpha-value>)",
+        // Fixed dark color for text/icons sitting on the pink accent.
+        onaccent: "#0A0B0E",
+        // Accents are theme-independent.
         pink: {
           DEFAULT: "#FF3D81",
           soft: "#FF7AA8",

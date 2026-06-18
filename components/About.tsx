@@ -4,7 +4,7 @@ export default function About() {
   return (
     <section id="about" className="mx-auto max-w-page px-6 py-20 sm:px-12 lg:px-20">
       <div className="flex flex-col items-center gap-16 lg:flex-row">
-        <div className="relative flex h-[420px] w-full max-w-[360px] shrink-0 items-center justify-center overflow-hidden rounded-[20px] border border-line bg-gradient-to-b from-[#16191F] to-[#0C0D11]">
+        <div className="relative flex h-[420px] w-full max-w-[360px] shrink-0 items-center justify-center overflow-hidden rounded-[20px] border border-line bg-surface">
           <div
             className="pointer-events-none absolute -left-10 -top-20 h-[300px] w-[300px]"
             style={{
@@ -25,7 +25,7 @@ export default function About() {
           </span>
           <p className="max-w-[640px] text-[22px] leading-[1.5] tracking-[-0.01em] text-snow sm:text-[24px]">
             I&apos;m an engineering leader who likes problems at the intersection of{" "}
-            <span className="text-pink-soft">
+            <span className="text-pink">
               AI infrastructure, distributed systems, and developer productivity
             </span>{" "}
             — building platforms that stay fast and reliable at massive scale.

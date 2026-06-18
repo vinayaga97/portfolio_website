@@ -30,7 +30,7 @@ const cards = [
     body: "High-agency, low-process teams — clear ownership, trust-based delegation, and a high bar for decision quality.",
     accent: "snow",
     icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F4F6FA" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="text-snow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M16 18a4 4 0 0 0-8 0" />
         <circle cx="12" cy="8" r="3.5" />
         <path d="M4 20a6 6 0 0 1 4-5.6M20 20a6 6 0 0 0-4-5.6" />
@@ -55,7 +55,7 @@ export default function Capabilities() {
         {cards.map((c) => (
           <div
             key={c.title}
-            className="flex flex-col gap-[18px] rounded-[16px] border border-line bg-gradient-to-b from-panel to-[#0E1015] p-7"
+            className="flex flex-col gap-[18px] rounded-[16px] border border-line bg-panel p-7"
           >
             <div
               className={`flex h-10 w-10 items-center justify-center rounded-[10px] border ${iconWrap[c.accent]}`}

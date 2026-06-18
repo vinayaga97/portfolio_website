@@ -13,7 +13,7 @@ export default function Hero() {
       />
       <div className="relative mx-auto flex max-w-page flex-col items-center gap-16 px-6 py-16 sm:px-12 lg:flex-row lg:px-20 lg:py-24">
         <div className="flex w-full flex-col gap-8 lg:w-[640px] lg:shrink-0">
-          <span className="self-start rounded-[20px] border border-pink/30 bg-pink/10 px-3.5 py-2 font-mono text-[12px] tracking-[0.06em] text-pink-soft">
+          <span className="self-start rounded-[20px] border border-pink/30 bg-pink/10 px-3.5 py-2 font-mono text-[12px] tracking-[0.06em] text-pink">
             ENGINEERING LEADER · AI INFRA & DISTRIBUTED SYSTEMS
           </span>
           <h1 className="flex flex-col text-[56px] font-semibold leading-[1.02] tracking-[-0.035em] sm:text-[72px] lg:text-[80px]">
@@ -31,7 +31,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-4">
             <a
               href="mailto:vka0797@gmail.com"
-              className="rounded-[10px] bg-gradient-to-br from-pink to-pink-mid px-6 py-3.5 text-[15px] font-semibold text-ink shadow-[0_8px_30px_rgba(255,61,129,0.35)] transition-transform hover:-translate-y-0.5"
+              className="rounded-[10px] bg-gradient-to-br from-pink to-pink-mid px-6 py-3.5 text-[15px] font-semibold text-onaccent shadow-[0_8px_30px_rgba(255,61,129,0.35)] transition-transform hover:-translate-y-0.5"
             >
               Get in touch
             </a>
