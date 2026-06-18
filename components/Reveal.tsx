@@ -29,11 +29,9 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
-    const reduce =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-
-    if (reduce || typeof IntersectionObserver === "undefined") {
+    // Reduced motion is handled in CSS; here we only need a fallback for the
+    // (rare) absence of IntersectionObserver.
+    if (typeof IntersectionObserver === "undefined") {
       setVisible(true);
       return;
     }

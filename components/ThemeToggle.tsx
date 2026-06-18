@@ -3,11 +3,9 @@
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false);
   const [isLight, setIsLight] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     setIsLight(document.documentElement.classList.contains("light"));
   }, []);
 
@@ -30,8 +28,8 @@ export default function ThemeToggle() {
       aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
       className="flex h-9 w-9 items-center justify-center rounded-full border border-line bg-surface text-muted transition-colors hover:text-snow"
     >
-      {/* Render the sun (default/dark) until mounted to match SSR output. */}
-      {mounted && isLight ? (
+      {/* Defaults to the sun (dark) on SSR; the effect corrects it after mount. */}
+      {isLight ? (
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
         </svg>
