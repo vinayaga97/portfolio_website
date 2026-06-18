@@ -1,36 +1,45 @@
-# vinayagarwal.com
+# Vinay Kumar Agarwal — Portfolio
 
-Personal site for Vinay Kumar Agarwal — built with Next.js 14 (App Router), TypeScript, and Tailwind CSS. Dark, AI-native design with a live agent-mesh visual.
+The source for my personal site, **[vinayagarwal.com](https://vinayagarwal.com)**.
 
-## Run locally
+I'm an engineering leader working at the intersection of **AI infrastructure, distributed systems, and platform engineering** — currently leading platform engineering for AI and agentic systems at Plotline (1B+ requests/day), previously at Allen Digital, Inshorts, and Oracle. IIT Kanpur.
 
-```bash
-npm install
-npm run dev
-```
+This repo is a single-page, dark, AI-native portfolio with a live "agent-mesh" system visual as its centerpiece.
 
-Open http://localhost:3000
+## Highlights
 
-## Build
+- **Agent-mesh hero** — an animated topology (gateway → orchestrator → agents → services → observability) that reflects what I actually build, not a generic illustration.
+- **Proof-first layout** — headline metrics (1B+ req/day, 10M+ DAU, $1M+ saved) sit above the fold.
+- **Career timeline** — roles linked on a connected rail rather than a flat list.
+- **Considered design system** — a single accent palette, Geist type, and consistent spacing; fully responsive.
 
-```bash
-npm run build && npm start
-```
+## Tech
+
+| | |
+|---|---|
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript |
+| Styling | Tailwind CSS |
+| Fonts | Geist / Geist Mono (`geist` package) |
+| Hosting | Vercel |
 
 ## Structure
 
-- `app/layout.tsx` — fonts (Geist / Geist Mono via `next/font`) and metadata
-- `app/page.tsx` — page composition
-- `components/` — one file per section:
-  - `Nav`, `Hero` (+ `AgentMesh`), `Metrics`, `About`, `Capabilities`, `Stack`, `Work`, `Footer`
+```
+app/
+  layout.tsx      # fonts + metadata
+  page.tsx        # section composition
+  globals.css
+components/        # one file per section
+  Nav · Hero · AgentMesh · Metrics · About · Capabilities · Stack · Work · Footer
+public/
+  vinay.jpg       # profile photo
+```
 
-## Customize
+## Running & contributing
 
-- **Photo:** in `components/About.tsx`, drop your image into `public/` and replace the placeholder block with an `<img src="/vinay.jpg" className="absolute inset-0 h-full w-full object-cover" />`.
-- **Colors:** palette lives in `tailwind.config.ts` (`pink`, `mint`, `ink`, etc.).
-- **Agent mesh:** node labels and edges are in `components/AgentMesh.tsx`.
-- **Work / Stack:** edit the arrays at the top of `components/Work.tsx` and `components/Stack.tsx`.
+Setup, local development, build, and customization steps live in **[DEVELOPMENT.md](./DEVELOPMENT.md)**.
 
-## Deploy
+## License
 
-Push to GitHub and import into [Vercel](https://vercel.com) — zero config. Point `vinayagarwal.com` at the Vercel project in domain settings.
+Code is available under the MIT License. The content, copy, and personal photo are © Vinay Kumar Agarwal and not covered by that license.
