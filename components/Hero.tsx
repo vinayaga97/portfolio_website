@@ -1,4 +1,5 @@
 import AgentMesh from "./AgentMesh";
+import LogoStack from "./LogoStack";
 
 export default function Hero() {
   return (
@@ -50,17 +51,9 @@ export default function Hero() {
             >
               View work
             </a>
-            <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-[10px] border border-line bg-surface px-6 py-3.5 text-[15px] font-medium text-snow transition-colors hover:border-hair"
-            >
-              Resume
-            </a>
-            <span className="pl-1 font-mono text-[14px] text-muted">
-              vka0797@gmail.com
-            </span>
+          </div>
+          <div className="hero-in" style={{ animationDelay: "300ms" }}>
+            <LogoStack />
           </div>
         </div>
         <div
