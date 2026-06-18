@@ -1,36 +1,59 @@
+type Variant = "primary" | "agent" | "service" | "gateway";
+
 type NodeProps = {
   left: string;
   top: string;
   label: string;
-  variant?: "primary" | "agent" | "service" | "gateway";
+  variant?: Variant;
+};
+
+/* Node box dimensions are expressed in cqi (container query inline-size) units
+   so the whole mesh scales proportionally with the card width — at the 560px
+   design width 1cqi = 5.6px, and everything shrinks together on small screens
+   instead of the fixed-px boxes overflowing. */
+const size: Record<Variant, { px: number; py: number; font: number; dot: number }> = {
+  primary: { px: 3.2, py: 2.0, font: 2.32, dot: 1.25 },
+  agent: { px: 2.32, py: 1.6, font: 2.14, dot: 1.07 },
+  service: { px: 2.32, py: 1.6, font: 2.14, dot: 1.07 },
+  gateway: { px: 2.5, py: 1.6, font: 2.14, dot: 1.07 },
 };
 
 function MeshNode({ left, top, label, variant = "agent" }: NodeProps) {
-  const styles: Record<NonNullable<NodeProps["variant"]>, string> = {
-    primary:
-      "border-pink bg-pink/10 shadow-[0_0_28px_rgba(255,61,129,0.35)] px-[18px] py-[11px]",
-    agent: "border-hair bg-surface2 px-[13px] py-[9px]",
-    service: "border-mint/30 bg-mint/10 px-[13px] py-[9px]",
-    gateway: "border-hair bg-surface2 px-[14px] py-[9px]",
+  const box: Record<Variant, string> = {
+    primary: "border-pink bg-pink/10 shadow-[0_0_28px_rgba(255,61,129,0.35)]",
+    agent: "border-hair bg-surface2",
+    service: "border-mint/30 bg-mint/10",
+    gateway: "border-hair bg-surface2",
   };
-  const dot: Record<NonNullable<NodeProps["variant"]>, string> = {
-    primary: "bg-pink shadow-[0_0_9px_#FF3D81] h-[7px] w-[7px]",
-    agent: "bg-pink-soft h-1.5 w-1.5",
-    service: "bg-mint h-1.5 w-1.5",
-    gateway: "bg-muted h-1.5 w-1.5",
+  const dot: Record<Variant, string> = {
+    primary: "bg-pink shadow-[0_0_9px_#FF3D81]",
+    agent: "bg-pink-soft",
+    service: "bg-mint",
+    gateway: "bg-muted",
   };
-  const text: Record<NonNullable<NodeProps["variant"]>, string> = {
-    primary: "text-snow text-[13px] font-medium",
-    agent: "text-ink2 text-[12px]",
-    service: "text-ink2 text-[12px]",
-    gateway: "text-ink2 text-[12px]",
+  const text: Record<Variant, string> = {
+    primary: "text-snow font-medium",
+    agent: "text-ink2",
+    service: "text-ink2",
+    gateway: "text-ink2",
   };
+  const s = size[variant];
   return (
     <div
-      className={`absolute flex -translate-x-1/2 -translate-y-1/2 items-center gap-2 rounded-[10px] border font-mono ${styles[variant]}`}
-      style={{ left, top }}
+      className={`absolute flex -translate-x-1/2 -translate-y-1/2 items-center border font-mono ${box[variant]}`}
+      style={{
+        left,
+        top,
+        gap: "1.43cqi",
+        padding: `${s.py}cqi ${s.px}cqi`,
+        borderRadius: "1.8cqi",
+        fontSize: `${s.font}cqi`,
+      }}
     >
-      <span className={`rounded-full ${dot[variant]}`} />
+      <span
+        className={`rounded-full ${dot[variant]}`}
+        style={{ width: `${s.dot}cqi`, height: `${s.dot}cqi` }}
+      />
       <span className={text[variant]}>{label}</span>
     </div>
   );
@@ -50,8 +73,11 @@ export default function AgentMesh() {
         </span>
       </div>
 
-      {/* graph */}
-      <div className="relative w-full" style={{ aspectRatio: "560 / 487" }}>
+      {/* graph — container-query context so nodes scale with its width */}
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: "560 / 487", containerType: "inline-size" }}
+      >
         <svg
           viewBox="0 0 560 487"
           className="absolute inset-0 h-full w-full"
@@ -93,10 +119,19 @@ export default function AgentMesh() {
         <MeshNode left="80.7%" top="61.6%" label="LLM Pool" variant="service" />
 
         <div
-          className="absolute flex w-[84%] -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-2.5 rounded-[10px] border border-dashed border-line2 bg-surface2 py-2.5"
-          style={{ left: "50%", top: "80.5%" }}
+          className="absolute flex w-[84%] -translate-x-1/2 -translate-y-1/2 items-center justify-center border border-dashed border-line2 bg-surface2"
+          style={{
+            left: "50%",
+            top: "80.5%",
+            gap: "1.8cqi",
+            padding: "1.8cqi 0",
+            borderRadius: "1.8cqi",
+          }}
         >
-          <span className="font-mono text-[12px] tracking-[0.06em] text-muted">
+          <span
+            className="font-mono tracking-[0.06em] text-muted"
+            style={{ fontSize: "2.14cqi" }}
+          >
             OBSERVABILITY · TRACES · METRICS · LOGS
           </span>
         </div>
