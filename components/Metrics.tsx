@@ -4,7 +4,7 @@ const items = [
   { value: "1B+", label: "REQUESTS / DAY", color: "text-pink" },
   { value: "10M+", label: "DAILY ACTIVE USERS", color: "text-snow" },
   { value: "$1M+", label: "ANNUAL CLOUD SAVINGS", color: "text-mint" },
-  { value: "IIT-K", label: "B.TECH · CS MINOR", color: "text-snow" },
+  { value: "IIT Kanpur", label: "B.TECH · CS MINOR", color: "text-snow" },
 ];
 
 export default function Metrics() {

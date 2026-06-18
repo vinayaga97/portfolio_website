@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const cards = [
   {
     title: "Agent systems",
-    body: "Multi-agent pipelines with feedback loops and iterative refinement — automation that compounds, not one-off scripts.",
+    body: "Multi-agent pipelines with feedback loops and iterative refinement. Automation that compounds instead of one-off scripts.",
     accent: "pink",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF7AA8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -16,7 +16,7 @@ const cards = [
   },
   {
     title: "Platform architecture",
-    body: "Systems that scale across traffic and team — designed for failure modes, observability, and long-term cost.",
+    body: "Systems that scale across traffic and team, built for failure modes, observability, and long-term cost.",
     accent: "mint",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5EE6C4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -29,7 +29,7 @@ const cards = [
   },
   {
     title: "Engineering leadership",
-    body: "High-agency, low-process teams — clear ownership, trust-based delegation, and a high bar for decision quality.",
+    body: "High-agency, low-process teams with clear ownership, trust-based delegation, and a high bar for decision quality.",
     accent: "snow",
     icon: (
       <svg className="text-snow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -51,7 +51,7 @@ export default function Capabilities() {
   return (
     <section className="mx-auto max-w-page px-6 pb-10 pt-16 sm:px-12 lg:px-20">
       <Reveal as="span" className="block font-mono text-[13px] tracking-[0.08em] text-muted">
-        001 — WHAT I BUILD
+        001 · WHAT I BUILD
       </Reveal>
       <div className="mt-7 grid gap-5 md:grid-cols-3">
         {cards.map((c, i) => (

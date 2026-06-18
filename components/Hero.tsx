@@ -29,10 +29,10 @@ export default function Hero() {
             className="hero-in max-w-[560px] text-[18px] leading-[1.65] text-muted sm:text-[19px]"
             style={{ animationDelay: "160ms" }}
           >
-            I lead platform engineering for AI and agentic systems at Plotline —
-            orchestration, distributed execution, and observability serving 1B+
-            requests a day. Previously scaled backend at Inshorts to 10M+ DAU and
-            built GenAI platforms at Allen Digital. IIT Kanpur.
+            I lead platform engineering for AI and agentic systems at Plotline,
+            where orchestration, distributed execution, and observability keep 1B+
+            requests a day fast and reliable. Before that I scaled Inshorts backend
+            to 10M+ daily users and shipped GenAI platforms at Allen Digital. IIT Kanpur.
           </p>
           <div
             className="hero-in flex flex-wrap items-center gap-4"

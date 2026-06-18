@@ -24,17 +24,17 @@ export default function About() {
             ABOUT
           </span>
           <p className="max-w-[640px] text-[22px] leading-[1.5] tracking-[-0.01em] text-snow sm:text-[24px]">
-            I&apos;m an engineering leader who likes problems at the intersection of{" "}
+            I&apos;m an engineering leader drawn to the intersection of{" "}
             <span className="text-pink">
               AI infrastructure, distributed systems, and developer productivity
-            </span>{" "}
-            — building platforms that stay fast and reliable at massive scale.
+            </span>
+            {". "}I build platforms that stay fast and reliable at massive scale.
           </p>
           <p className="max-w-[600px] text-[16px] leading-[1.7] text-muted">
-            Over 7 years I&apos;ve worked across event-driven architectures,
-            real-time systems, and AI workflows — from scaling backend at Inshorts
-            to shipping GenAI platforms and now leading platform engineering for
-            agentic systems at Plotline.
+            Across 7 years I&apos;ve built event-driven architectures, real-time
+            systems, and AI workflows. The throughline runs from scaling backend at
+            Inshorts to shipping GenAI platforms, and now to leading platform
+            engineering for agentic systems at Plotline.
           </p>
           <div className="flex flex-wrap gap-12 pt-2">
             {[

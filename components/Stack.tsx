@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 
-// AI / agentic capabilities lead the list — they are the differentiators.
+// AI / agentic capabilities lead the list; they are the differentiators.
 const stack: { label: string; ai?: boolean }[] = [
   { label: "RAG / LLM Infra", ai: true },
   { label: "Agentic Workflows", ai: true },

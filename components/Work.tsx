@@ -10,35 +10,35 @@ type Role = {
 
 const roles: Role[] = [
   {
-    period: "2025 — NOW",
+    period: "2025 → Now",
     title: "Engineering Leader",
     company: "Plotline",
-    body: "Lead platform engineering for AI & agentic systems serving 1B+ requests/day — orchestration, distributed execution, observability, and reliability.",
+    body: "Lead platform engineering for AI and agentic systems serving 1B+ requests/day across orchestration, distributed execution, observability, and reliability.",
     current: true,
   },
   {
-    period: "2024 — 2025",
+    period: "2024 → 2025",
     title: "Senior Software Engineer",
     company: "ALLEN Digital",
     body: "Led a GenAI-powered doubts platform and an 8-engineer team, scaling real-time academic support nationally across web and app.",
   },
   {
-    period: "2023 — 2024",
+    period: "2023 → 2024",
     title: "Co-Founder",
     company: "Cookiee",
-    body: "Built an activity-based networking app to 3,000+ users — real-time chat, notifications, and GCP infra in Go, Kafka, and Mongo.",
+    body: "Built an activity-based networking app to 3,000+ users with real-time chat, notifications, and GCP infra in Go, Kafka, and Mongo.",
   },
   {
-    period: "2020 — 2024",
+    period: "2020 → 2024",
     title: "Senior Software Engineer",
     company: "Inshorts · PublicApp",
     body: "Scaled a hyperlocal video news platform to 10M+ DAU / 50M+ MAU; cut cloud costs 35% (~$1M+/yr) across 30+ GKE services.",
   },
   {
-    period: "2019 — 2020",
+    period: "2019 → 2020",
     title: "Applications Engineer",
     company: "Oracle",
-    body: "Built Java supply & inventory planning systems; optimized production SQL for 350% faster load times.",
+    body: "Built Java supply and inventory planning systems, optimizing production SQL for 350% faster load times.",
   },
 ];
 
@@ -71,7 +71,7 @@ export default function Work() {
     <section id="work" className="mx-auto max-w-page px-6 pb-20 pt-10 sm:px-12 lg:px-20">
       <div className="flex items-baseline justify-between pb-5">
         <span className="font-mono text-[13px] tracking-[0.08em] text-muted">
-          002 — WORK
+          002 · WORK
         </span>
         <span className="text-[15px] text-muted">Selected roles</span>
       </div>

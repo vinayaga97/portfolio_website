@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme tokens — RGB channels so Tailwind's /alpha modifiers work.
+/* Theme tokens. RGB channels so Tailwind's /alpha modifiers work.
    Default = dark. `.light` on <html> switches to light. */
 :root {
   --c-bg: 10 11 14;        /* #0A0B0E */
@@ -51,7 +51,7 @@ body {
   color: #ffffff;
 }
 
-/* Scroll-reveal — sections/items fade + slide up as they enter the viewport.
+/* Scroll-reveal: sections/items fade + slide up as they enter the viewport.
    The `is-visible` class is toggled by components/Reveal.tsx. */
 .reveal {
   opacity: 0;

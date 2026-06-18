@@ -4,12 +4,12 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Vinay Kumar Agarwal — Engineering Leader",
+  title: "Vinay Kumar Agarwal · Engineering Leader",
   description:
-    "Engineering leader building AI and agentic systems at scale — distributed systems, backend infrastructure, and GenAI platforms.",
+    "Engineering leader building AI and agentic systems at scale across distributed systems, backend infrastructure, and GenAI platforms.",
   metadataBase: new URL("https://vinayagarwal.com"),
   openGraph: {
-    title: "Vinay Kumar Agarwal — Engineering Leader",
+    title: "Vinay Kumar Agarwal · Engineering Leader",
     description:
       "Engineering leader building AI and agentic systems at scale.",
     url: "https://vinayagarwal.com",
