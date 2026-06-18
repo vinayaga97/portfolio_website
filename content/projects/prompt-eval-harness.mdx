@@ -1,0 +1,38 @@
+---
+title: "Prompt Eval Harness"
+summary: "A lightweight harness for scoring prompt and model changes against golden datasets in CI."
+tags: ["LLM", "Evals", "Tooling"]
+status: "WIP"
+date: "2025-06-10"
+role: "Solo"
+stack: ["TypeScript", "Vitest", "SQLite"]
+repoUrl: "https://github.com/vinayaga97"
+accent: "pink"
+featured: false
+demo:
+  type: "placeholder"
+  label: "Eval run dashboard"
+---
+
+## Problem
+
+Prompt changes ship on vibes. A tweak that helps one case silently regresses ten
+others, and nobody notices until users do.
+
+## Approach
+
+Treat prompts like code: every change runs against a golden dataset and reports a
+score diff before merge.
+
+```ts
+const result = await runEval(suite, { model: "claude-opus-4-8" });
+expect(result.score).toBeGreaterThanOrEqual(baseline.score);
+```
+
+- Deterministic scoring with per-case breakdowns.
+- Regression gate wired into CI on every pull request.
+
+## Results
+
+Early days, but already caught two regressions that would have shipped. Building
+out the dashboard and multi-model comparison next.

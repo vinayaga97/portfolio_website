@@ -1,0 +1,35 @@
+---
+title: "RAG Knowledge Engine"
+summary: "Retrieval pipeline that grounds LLM answers in a versioned, permission-aware knowledge base."
+tags: ["RAG", "Vector DB", "LLM"]
+status: "Live"
+date: "2025-02-15"
+role: "Lead Engineer"
+stack: ["Python", "pgvector", "FastAPI"]
+demoUrl: "https://example.com"
+repoUrl: "https://github.com/vinayaga97"
+accent: "mint"
+featured: false
+demo:
+  type: "placeholder"
+  label: "Retrieval + answer demo"
+---
+
+## Problem
+
+Generic RAG returns confident answers from stale or unauthorized documents.
+For an internal assistant, that is worse than no answer at all.
+
+## Approach
+
+Retrieval is permission-aware and version-pinned: every chunk carries an ACL and
+a document version, and the ranker filters before the model ever sees a passage.
+
+- Hybrid search (dense + lexical) for recall on jargon and code.
+- Per-user ACL filtering pushed into the vector query.
+- Citations link back to the exact source version used.
+
+## Results
+
+- **40% fewer hallucinated citations** versus the naive baseline.
+- Answers carry verifiable sources, so reviewers trust the output.

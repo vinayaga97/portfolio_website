@@ -1,0 +1,45 @@
+---
+title: "Agent Mesh Orchestrator"
+summary: "A control plane for multi-agent pipelines with feedback loops, retries, and live observability."
+tags: ["LLM", "Agents", "Orchestration"]
+status: "Live"
+date: "2025-05-01"
+role: "Architect / Lead"
+stack: ["Go", "Kafka", "Redis", "OpenTelemetry"]
+demoUrl: "https://example.com"
+repoUrl: "https://github.com/vinayaga97"
+accent: "pink"
+featured: true
+demo:
+  type: "placeholder"
+  label: "Live orchestration graph"
+---
+
+## Problem
+
+Multi-agent systems fail quietly. A planner stalls, a tool call times out, and
+the whole pipeline degrades with no clear signal of where or why. Teams end up
+reading raw logs to reconstruct what happened across dozens of agent hops.
+
+## Approach
+
+I built a control plane that treats each agent step as a first-class, observable
+unit of work. Steps emit structured spans, feed results back into the planner,
+and retry with bounded backoff when a downstream call fails.
+
+```go
+// Each hop is a span with a typed result the planner can reason about.
+span := tracer.Start(ctx, "agent.execute", attrs(agent, attempt))
+result, err := agent.Run(ctx, input)
+span.Record(result, err)
+```
+
+- Feedback loops let the planner re-route around failing agents.
+- Backpressure via Kafka keeps a slow agent from collapsing the mesh.
+- Every run is replayable from its span history.
+
+## Results
+
+- **1B+ requests/day** flowing through the mesh in production.
+- **p99 under 50ms** of orchestration overhead per hop.
+- Incident triage dropped from hours of log-reading to a single trace view.

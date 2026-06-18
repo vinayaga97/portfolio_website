@@ -13,9 +13,12 @@
   },
   "dependencies": {
     "geist": "^1.7.2",
+    "gray-matter": "^4.0.3",
     "next": "14.2.5",
+    "next-mdx-remote": "^6.0.0",
     "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react-dom": "18.3.1",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.0",
