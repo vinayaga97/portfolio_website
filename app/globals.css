@@ -96,3 +96,140 @@ body {
     animation: none !important;
   }
 }
+
+/* Traveling gradient border ("beam"). A conic gradient rotates and is clipped
+   to a 1.5px ring via mask compositing. The caller owns bg / radius / border;
+   this only adds the orbiting ring on top, inheriting the caller's radius. */
+@property --beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes beamSpin {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+.beam-card {
+  position: relative;
+}
+.beam-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    #ff3d81 60deg,
+    #5ee6c4 120deg,
+    transparent 200deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: beamSpin 4s linear infinite;
+  animation-delay: var(--beam-delay, 0s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .beam-card::before {
+    animation: none;
+  }
+}
+
+/* Work timeline: logo/monogram marker, grayscale→color as the rail reaches it. */
+.marker {
+  box-shadow: 0 0 0 4px rgb(var(--c-bg));
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition: filter 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+}
+.marker[data-on="1"] {
+  filter: grayscale(0);
+  opacity: 1;
+  box-shadow: 0 0 0 4px rgb(var(--c-bg)), 0 0 14px rgba(255, 61, 129, 0.35);
+}
+
+/* MDX writeup typography for project detail pages. */
+.prose-mdx {
+  color: rgb(var(--c-muted));
+  font-size: 16px;
+  line-height: 1.75;
+}
+.prose-mdx > * + * {
+  margin-top: 1.1em;
+}
+.prose-mdx h2 {
+  color: rgb(var(--c-fg));
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 2em;
+  line-height: 1.2;
+}
+.prose-mdx h3 {
+  color: rgb(var(--c-fg));
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 1.6em;
+}
+.prose-mdx a {
+  color: #ff3d81;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-mdx strong {
+  color: rgb(var(--c-fg));
+  font-weight: 600;
+}
+.prose-mdx ul,
+.prose-mdx ol {
+  padding-left: 1.25em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.prose-mdx ul {
+  list-style: disc;
+}
+.prose-mdx ol {
+  list-style: decimal;
+}
+.prose-mdx li::marker {
+  color: rgb(var(--c-muted-2));
+}
+.prose-mdx code {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 13.5px;
+  background: rgb(var(--c-surface));
+  border: 1px solid rgb(var(--c-line));
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+  color: rgb(var(--c-fg2));
+}
+.prose-mdx pre {
+  background: rgb(var(--c-surface));
+  border: 1px solid rgb(var(--c-line));
+  border-radius: 12px;
+  padding: 18px 20px;
+  overflow-x: auto;
+}
+.prose-mdx pre code {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgb(var(--c-fg2));
+}
+.prose-mdx blockquote {
+  border-left: 2px solid #ff3d81;
+  padding-left: 1em;
+  color: rgb(var(--c-fg2));
+}
+.prose-mdx img {
+  border-radius: 12px;
+  border: 1px solid rgb(var(--c-line));
+}

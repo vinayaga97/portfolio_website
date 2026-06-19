@@ -58,7 +58,8 @@ export default function Capabilities() {
           <Reveal
             key={c.title}
             delay={i * 70}
-            className="flex flex-col gap-[18px] rounded-[16px] border border-line bg-panel p-7"
+            className="beam-card flex flex-col gap-[18px] rounded-[16px] border border-line bg-panel p-7"
+            style={{ ["--beam-delay" as string]: `${i * -1.3}s` }}
           >
             <div
               className={`flex h-10 w-10 items-center justify-center rounded-[10px] border ${iconWrap[c.accent]}`}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ElementType, type ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
@@ -9,6 +9,8 @@ type RevealProps = {
   delay?: number;
   /** Element to render. Defaults to "div". */
   as?: ElementType;
+  /** Extra inline styles, merged with the stagger delay. */
+  style?: CSSProperties;
 };
 
 /**
@@ -21,6 +23,7 @@ export default function Reveal({
   className,
   delay,
   as: Tag = "div",
+  style,
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const [visible, setVisible] = useState(false);
@@ -55,7 +58,7 @@ export default function Reveal({
     <Tag
       ref={ref}
       className={`reveal${visible ? " is-visible" : ""}${className ? ` ${className}` : ""}`}
-      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+      style={{ ...(delay ? { transitionDelay: `${delay}ms` } : null), ...style }}
     >
       {children}
     </Tag>
