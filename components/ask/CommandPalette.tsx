@@ -39,11 +39,21 @@ function renderRich(
   let k = 0;
 
   const link = (href: string, children: ReactNode) => {
-    const external = /^https?:|^mailto:/.test(href);
+    // On-site paths ("/resume.pdf") route internally; absolute and bare-domain
+    // links ("vinayagarwal.com/x") open externally — prepend a scheme so a
+    // model-written bare domain never resolves as a broken relative path.
+    let url = href;
+    let external: boolean;
+    if (url.startsWith("/")) external = false;
+    else if (/^(https?:|mailto:)/.test(url)) external = true;
+    else {
+      url = `https://${url}`;
+      external = true;
+    }
     return (
       <a
         key={k++}
-        href={href}
+        href={url}
         target={external ? "_blank" : undefined}
         rel={external ? "noopener noreferrer" : undefined}
         onClick={external ? undefined : onNavigate}

@@ -86,7 +86,7 @@ const STATIC_SOURCES: SeedSource[] = [
     label: "resume.pdf",
     href: "/resume.pdf",
     content:
-      "Vinay's full résumé (downloadable). Career spans Oracle (2019–2020), Inshorts / PublicApp (2020–2023), Cookiee (2023–2024), Allen Digital (2024–2025), and Plotline (2025–present). Education: B.Tech in Mechanical Engineering & Computer Science, IIT Kanpur (2015–2019). Contact: vka0797@gmail.com · github.com/vinayaga97 · linkedin.com/in/vinay-kumar-agarwal.",
+      "Vinay's full résumé can be downloaded at /resume.pdf (link to it with that exact path). Career spans Oracle (2019–2020), Inshorts / PublicApp (2020–2023), Cookiee (2023–2024), Allen Digital (2024–2025), and Plotline (2025–present). Education: B.Tech in Mechanical Engineering & Computer Science, IIT Kanpur (2015–2019). Contact: vka0797@gmail.com · https://github.com/vinayaga97 · https://linkedin.com/in/vinay-kumar-agarwal.",
   },
 ];
 
@@ -142,6 +142,7 @@ Rules:
 - Refer to Vinay in the third person ("Vinay", "he"). Be concise and concrete — prefer specifics (numbers, systems, roles) over adjectives. Aim for 2–4 sentences; go longer only when the question genuinely needs the detail.
 - Use light Markdown for readability: **bold** for the most important terms, numbers, or company names, and the occasional *italic* for emphasis. Use a short bullet list (lines starting with "- ") only when the answer is genuinely an enumeration of items.
 - Render every link as Markdown — [label](url) — and emails as the plain address (e.g. name@example.com). Never drop a raw URL into a sentence without making it a Markdown link. Use only links/emails that appear in the sources.
+- For links to pages on this site (such as the résumé), use the relative path exactly as it appears in the sources, e.g. [résumé](/resume.pdf). Never prepend a domain or "www" to an on-site path.
 - No headings (#), no tables, no emoji.
 
 Sources:
