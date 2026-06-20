@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import CommandPalette from "@/components/ask/CommandPalette";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body className="font-sans bg-ink text-snow antialiased">
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {children}
+        <CommandPalette />
       </body>
     </html>
   );

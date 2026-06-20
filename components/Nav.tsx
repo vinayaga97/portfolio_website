@@ -1,4 +1,5 @@
 import ThemeToggle from "./ThemeToggle";
+import AskTrigger from "./ask/AskTrigger";
 
 export default function Nav() {
   return (
@@ -25,12 +26,7 @@ export default function Nav() {
           <a href="/#stack" className="hidden font-mono text-[13px] tracking-[0.06em] text-muted transition-colors hover:text-snow sm:block">
             STACK
           </a>
-          <div className="hidden items-center gap-2 rounded-[20px] border border-line bg-surface px-3.5 py-2 sm:flex">
-            <span className="h-[7px] w-[7px] rounded-full bg-mint shadow-[0_0_8px_#5EE6C4]" />
-            <span className="font-mono text-[12px] tracking-[0.04em] text-snow">
-              3 AGENTS ONLINE
-            </span>
-          </div>
+          <AskTrigger />
           <ThemeToggle />
         </div>
       </div>
